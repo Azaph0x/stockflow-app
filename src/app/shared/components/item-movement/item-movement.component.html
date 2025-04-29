@@ -1,0 +1,11 @@
+<div class="movement">
+  <ion-icon
+  [ngStyle]="{'color': getColor()}"
+  name="trending-{{ isEntry() ? 'up': 'down' }}-outline" />
+  <div class="data">
+    <p style="margin-bottom: 12px;"><strong>{{ movement.unitValue ? 'Entrada': 'Saida' }} - {{ movement.movementDate}}</strong></p>
+    <p>Unid: <strong>{{ movement.unitValue | currency: 'BRL' }}</strong> | Qtd: <strong>{{ movement.quantity }}</strong></p>
+    <p><strong>Total:</strong> {{ (movement.unitValue * movement.quantity) | currency: 'BRL' }}</p>
+    <p><strong>Validade:</strong> {{ movement.dateValidate}}</p>
+  </div>
+</div>

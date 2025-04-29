@@ -1,0 +1,21 @@
+<ion-content>
+
+  <div class="actions">
+    <home-card
+      [title]="'Cadastrar Produto'"
+      [Icon]="'copy-outline'"
+      (click)="redirect(['products', 'create'])"
+    ></home-card>
+    <home-card
+      [title]="'Cadastrar Movimentação'"
+      [Icon]="'document-text-outline'"
+    ></home-card>
+    <home-card
+      [title]="'Analise'"
+      [Icon]="'analytics-outline'"
+    ></home-card>
+  </div>
+
+  <home-list-segment></home-list-segment>
+
+</ion-content>

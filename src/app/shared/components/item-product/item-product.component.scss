@@ -1,0 +1,31 @@
+.item-product {
+  display: flex;
+  gap: 10px;
+  background-color: #2c2c2c;
+  align-items: center;
+
+  border-radius: 10px;
+  padding: 10px;
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  h2, p { margin: 0; }
+  h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #6cb53b;
+  }
+  p {
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .more {
+    position: relative;
+    z-index: 1000;
+  }
+}

@@ -1,0 +1,24 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+
+  color: #2dd55b;
+
+  h2 {
+    margin: 0;
+    font-size: 16px;
+    // white-space: wrap;
+    text-align: center;
+    word-wrap: break-word;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  ion-icon {
+    font-size: 28px;
+  }
+}

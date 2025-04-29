@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <label *ngIf="label">{{ label }} @if (requiredNote) { <span>*</span> }</label>
+  <ion-input
+    [formControl]="control"
+    [attr.name]="name"
+    placeholder="{{ placeholder}}"
+    [ngStyle]="{ '--padding-end': (icon ? '32px' : '8px')}"
+  >
+    <ion-icon *ngIf="icon"
+      [name]="icon.src ? null : icon.value"
+      [src]="icon.src ? icon.value : null"
+    />
+  </ion-input>
+</div>

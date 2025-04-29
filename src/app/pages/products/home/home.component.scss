@@ -1,0 +1,14 @@
+ion-content {
+  &::part(scroll) {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
