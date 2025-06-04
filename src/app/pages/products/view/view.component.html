@@ -8,8 +8,8 @@
         <h2>{{ product.name }}</h2>
         <p><strong>Descrição</strong> {{ product.description }}</p>
         <p><strong>Ativo</strong> {{ product.isActivated ? 'Sim': 'Não'}}</p>
-        <p><strong>Cadastrado </strong> {{ product.createdAt! | date: 'dd/mm/yy' }}</p>
-        <p><strong>Preço</strong> R$ 0,00</p>
+        <p><strong>Cadastrado </strong> {{ product.createdAt! | date: 'dd/MM/yy' }}</p>
+        <p><strong>Preço</strong> {{ product.unitPrice | currency: 'BRL' }}</p>
         <p><strong>Movimentações </strong> 0</p>
       </div>
     </div>

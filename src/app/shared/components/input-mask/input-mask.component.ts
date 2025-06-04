@@ -2,12 +2,12 @@ import { ChangeDetectionStrategy, Component, Input, input, OnInit } from '@angul
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'custom-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss'],
+  selector: 'custom-input-mask',
+  templateUrl: './input-mask.component.html',
+  styleUrls: ['./input-mask.component.scss'],
   standalone: false,
 })
-export class InputComponent  implements OnInit {
+export class InputMaskComponent  implements OnInit {
 
   placeholder = input<string>();
   name = input<string>();
@@ -15,6 +15,7 @@ export class InputComponent  implements OnInit {
   label = input<string>();
   requiredNote = input<boolean>(false);
   icon = input<{ src: boolean, value: string}>();
+  mask = input<string>();
 
   constructor() { }
 

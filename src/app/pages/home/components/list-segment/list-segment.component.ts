@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
+import { Movement } from 'src/app/models/movement.model';
 import { Product } from 'src/app/models/product.model';
+import { MovementService } from 'src/app/services/movement/movement.service';
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
@@ -12,18 +14,18 @@ import { ProductService } from 'src/app/services/product/product.service';
 export class ListSegmentComponent  implements OnInit {
 
   segment: string = 'products';
-  products!: Product[];
+  products$!: Observable<Product[]>;
+  movements$!: Observable<Movement[]>;
+
 
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    private movementService: MovementService
   ) { }
 
   ngOnInit() {
-    this.productService.getProduct()
-    .pipe(
-      tap((r) => this.products = r)
-    )
-    .subscribe()
+    this.products$ = this.productService.getProduct()
+    this.movements$ = this.movementService.getMoviments();
   }
 
 }

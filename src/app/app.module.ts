@@ -11,6 +11,9 @@ import { CategoryProductService } from './services/category-product/category-pro
 import { ProductService } from './services/product/product.service';
 import { ProductMockService } from './services/product/product-mock.service';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { provideEnvironmentNgxMask } from 'ngx-mask';
+import { MovementService } from './services/movement/movement.service';
+import { MovementMockService } from './services/movement/movement-mock.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +30,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: CategoryProductService, useClass: CategoryProductMockService },
-    { provide: ProductService, useClass: ProductMockService}
+    { provide: ProductService, useClass: ProductMockService },
+    { provide: MovementService , useClass: MovementMockService },
+    provideEnvironmentNgxMask()
   ],
   bootstrap: [AppComponent],
 })

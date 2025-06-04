@@ -4,6 +4,8 @@
   [attr.name]="name()"
   placeholder="{{ placeholder( )}}"
   [ngStyle]="{ '--padding-end': (icon() ? '32px' : '8px')}"
+  [mask]="mask()"
+  thousandSeparator="." decimalMarker=","
 >
   @if (icon(); as icon) {
     <ion-icon

@@ -18,14 +18,23 @@
     [icon]="{ src: false, value: 'barcode-outline'}"
     [control]="getControl('barCode')"
   />
-  <custom-select
-    [requiredNote]="true"
-    [label]="'Categoria'"
-    [options]="options"
-    [optionValue]="'id'"
-    [optionLabel]="'name'"
-    [control]="getControl('categoryId')"
-  />
+
+  <div class="row">
+    <custom-select
+      [requiredNote]="true"
+      [label]="'Categoria'"
+      [options]="options"
+      [optionValue]="'id'"
+      [optionLabel]="'name'"
+      [control]="getControl('categoryId')"
+    />
+    <custom-input
+      [requiredNote]="true"
+      [label]="'Valor'"
+      [control]="getControl('unitPrice')"
+      mask="separator.2"
+    />
+  </div>
   <ion-button
     (click)="submit()"
     [disabled]="form.invalid"

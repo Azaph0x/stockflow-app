@@ -35,7 +35,8 @@ export class CreateProductComponent  implements OnInit {
       name: new FormControl('', [Validators.minLength(2), Validators.required]),
       description: new FormControl(''),
       barCode: new FormControl('', [Validators.required]),
-      categoryId: new FormControl('', [Validators.required])
+      categoryId: new FormControl('', [Validators.required]),
+      unitPrice: new FormControl('', [Validators.required])
     })
   }
 
@@ -45,9 +46,12 @@ export class CreateProductComponent  implements OnInit {
 
   submit() {
     if(this.form.invalid) return;
+    const unitPrice = this.form.value.unitPrice
+
+    const priceFormatted = unitPrice.replace(/\./g, '').replace(',', '.')
     this.producService.createProduct({
       ...this.form.value,
-      unitPrice: 0,
+      unitPrice: parseFloat(priceFormatted)
     }).pipe(
       tap(() => {
         this.toastService.create('Produto criado!')
