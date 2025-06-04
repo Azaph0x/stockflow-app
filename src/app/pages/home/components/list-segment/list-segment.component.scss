@@ -5,7 +5,7 @@
 }
 
 .list-wrapper {
-  background-color: #2c2c2c;
+  background-color: rgb(204, 141, 118);
   padding: 8px;
   @extend %flex-col;
   gap: 16px;
@@ -13,16 +13,16 @@
 
 
   ion-segment {
-    --background: #252323;
+    --background: rgb(105, 49, 37);
 
     ion-segment-button {
       font-weight: 700;
       &::part(indicator-background) {
-        background: #2dd55b;
+        background: rgb(191, 128, 84);
       }
 
-      --color: #2dd55b;
-      --color-checked: #fff5f5;
+      --color: #fff;
+      --color-checked: rgb(105, 49, 37);
       // --border-radius: 20px;
     }
   }
